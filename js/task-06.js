@@ -5,7 +5,7 @@
 const inputText = document.querySelector("#validation-input");
 
 function lengthCheck(event) {
-    if (event.currentTarget.value.length === +inputText.dataset.length) {
+    if (event.currentTarget.value.length === Number(inputText.dataset.length)) {
         inputText.classList.remove("invalid");
         return inputText.classList.add("valid");
     }

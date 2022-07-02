@@ -6,7 +6,7 @@ const output = document.querySelector("#name-output");
 
 function fnInput() {
     if (textInput.value === " ") {
-        output.insertAdjacentHTML("afterend", "Anonymous");
+        output.textContent = "Anonymous";
     }
     return output.textContent = event.currentTarget.value;
 }

@@ -1,5 +1,4 @@
 // Напиши скрипт, который для каждого элемента массива ingredients:
-
 // Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
 // Добавит название ингредиента как его текстовое содержимое.
 // Добавит элементу класс item.
@@ -16,13 +15,13 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-const item = document.createElement('li');
+const items = ingredients.map(item => {
+  const li = document.createElement('li');
+  li.classList.add("item");
+  li.textContent = item;
+  return li;
+}
+)
+// console.log(items);
 
-const markup = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
-
-item.classList.add("item");
-
-// list.innerHTML = markup;
-list.insertAdjacentHTML("beforeend", markup);
-
-// console.log(item.classList);
+list.append(...items);
